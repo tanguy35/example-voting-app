@@ -146,7 +146,7 @@ spec:
   - name: "vote-service"
     port: 5000
     targetPort: 80
-    nodePort: 33000
+    nodePort: 32000
   selector:
     app: vote
 ---
@@ -185,6 +185,6 @@ spec:
   - name: "result-service"
     port: 5001
     targetPort: 80
-    nodePort: 33001
+    nodePort: 32001
   selector:
     app: result
