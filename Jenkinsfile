@@ -44,7 +44,6 @@ pipeline {
     }
     stage('Apply Kubernetes files') {
       steps {
-         sh 'kubectl login --token=sha256~YUqtD_AP-O8bXSNnYkUp9oe80mZRmKVRsg8IymLjtEU --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443'
          sh 'kubectl apply -f kubedeploy.yml'
       }
     }
