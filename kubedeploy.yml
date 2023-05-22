@@ -108,7 +108,7 @@ spec:
         app: worker
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_worker
+      - image: spywash/devops:worker
         name: worker
 ---
 apiVersion: apps/v1
@@ -128,7 +128,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote
+      - image: spywash/devops:vote
         name: vote
         ports:
         - containerPort: 80
@@ -167,7 +167,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result
+      - image: spywash/devops:result
         name: result
         ports:
         - containerPort: 80
