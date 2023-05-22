@@ -42,10 +42,12 @@ pipeline {
         }
       }
     }
-//    stage('Deploy to Kubernetes') {
-//      steps {
-//        kubernetesDeploy(configs: 'kubedeploy.yml', kubeconfigId: 'kubeconf')
-//      }
-//    }
+    stage('Apply Kubernetes files') {
+      steps {
+       withKubeConfig([credentialsId: 'kubeconf', serverUrl: 'https://api.sandbox-m3.1530.p1.openshiftapps.com:6443']) {
+         sh 'kubectl apply -f kubedeploy.yml'
+        }
+      }
+    }
   }
 }
