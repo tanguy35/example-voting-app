@@ -44,7 +44,7 @@ pipeline {
     }
     stage('Apply Kubernetes files') {
       steps {
-         sh 'whoami'
+         sh 'kubectl config --kubeconfig=/kube/config apply -f kubedeploy.yml '
       }
     }
   }
