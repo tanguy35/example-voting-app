@@ -4,7 +4,7 @@ metadata:
   annotations:
     template.alpha.openshift.io/wait-for-ready: 'true'
   resourceVersion: '764793995'
-  name: postgresql
+  name: db
   uid: ae7859ae-7a8d-449f-8ead-9cec9742bc12
   creationTimestamp: '2023-05-23T08:42:16Z'
   generation: 2
@@ -229,16 +229,11 @@ spec:
             successThreshold: 1
             failureThreshold: 3
           env:
+            env:
             - name: POSTGRESQL_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgresql
-                  key: database-user
+              value: postgres
             - name: POSTGRESQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgresql
-                  key: database-password
+              value: postgres
             - name: POSTGRESQL_DATABASE
               valueFrom:
                 secretKeyRef:
