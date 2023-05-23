@@ -1,24 +1,20 @@
 pipeline {
   agent any
   stages {
-//    stage('Snyk scan') {
-//	  steps {
-//		snykSecurity additionalArguments: '--all-projects', snykInstallation: 'snyk', snykTokenId: 'SNYK_TOKEN'
-//	  }
-//	}
+
     stage('Build result') {
       steps {
-        sh 'docker build -t spywash/devops:result ./result'
+        sh 'docker build -t tanguyn/ity:result ./result'
       }
     } 
     stage('Build vote') {
       steps {
-        sh 'docker build -t spywash/devops:vote ./vote'
+        sh 'docker build -t tanguyn/ity:vote ./vote'
       }
     }
     stage('Build worker') {
       steps {
-        sh 'docker build -t spywash/devops:worker ./worker'
+        sh 'docker build -t tanguyn/ity:worker ./worker'
       }
     }
     stage('Security scan') {
@@ -33,29 +29,25 @@ pipeline {
     stage('Push result image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:result'
+          sh 'docker push tanguyn/ity:result'
         }
       }
     }
     stage('Push vote image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:vote'
+          sh 'docker push tanguyn/ity:vote'
         }
       }
     }
     stage('Push worker image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:worker'
+          sh 'docker push tanguyn/ity:worker'
         }
       }
     }
-    stage('Apply Kubernetes files') {
-      steps {
-         sh 'kubectl --kubeconfig=/kube/config apply -f kubedeploy2.yml '
-      }
-    }
+    
   }
   post {
         always {
