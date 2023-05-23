@@ -1,28 +1,7 @@
 pipeline {
   agent any
   stages {
-    if (env.BRANCH_NAME == 'develop'){
-      stage('Build result') {
-      steps {
-        sh 'docker build -t spywash/devops:result ./result'
-      }
-    } 
-    stage('Build vote') {
-      steps {
-        sh 'docker build -t spywash/devops:vote ./vote'
-      }
-    }
-    stage('Build worker') {
-      steps {
-        sh 'docker build -t spywash/devops:worker ./worker'
-      }
-    }
-
-    } else {
-
-    
-
-    stage('Build result') {
+        stage('Build result') {
       steps {
         sh 'docker build -t spywash/devops:result ./result'
       }
@@ -57,8 +36,6 @@ pipeline {
           sh 'docker push spywash/devops:worker'
         }
       }
-    }
-
     }
 
   }
