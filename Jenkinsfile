@@ -21,6 +21,15 @@ pipeline {
         sh 'docker build -t spywash/devops:worker ./worker'
       }
     }
+    stage('Security scan') {
+      steps {
+        sh 'trivy fs . > security.log'
+        sh 'trivy image docker.io/spywash/devops:vote >> security.log'
+        sh 'trivy image docker.io/spywash/devops:result >> security.log'
+        sh 'trivy image docker.io/spywash/devops:worker >> security.log'
+        
+      }
+    }
     stage('Push result image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
@@ -48,4 +57,9 @@ pipeline {
       }
     }
   }
+  post {
+        always {
+            archiveArtifacts artifacts: 'security.log', onlyIfSuccessful: false
+        }
+    }
 }
