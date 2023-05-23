@@ -53,7 +53,7 @@ pipeline {
     }
     stage('Apply Kubernetes files') {
       steps {
-         sh 'kubectl --kubeconfig=/kube/config apply -f kubedeploy.yml '
+         sh 'kubectl --kubeconfig=/kube/config apply -f kubedeploy2.yml '
       }
     }
   }
