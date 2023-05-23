@@ -366,7 +366,7 @@ spec:
         - image: spywash/devops:vote
           name: vote
           ports:
-            - containerPort: 80
+            - containerPort: 8000
               name: vote
 ---
 apiVersion: v1
@@ -380,7 +380,7 @@ spec:
   ports:
     - name: "vote-service"
       port: 5000
-      targetPort: 80
+      targetPort: 8000
       nodePort: 32000
   selector:
     app: vote
