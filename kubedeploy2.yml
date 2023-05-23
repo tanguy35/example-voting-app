@@ -2,167 +2,167 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   annotations:
-    template.alpha.openshift.io/wait-for-ready: 'true'
-  resourceVersion: '764793995'
+    template.alpha.openshift.io/wait-for-ready: "true"
+  resourceVersion: "764793995"
   name: db
   uid: ae7859ae-7a8d-449f-8ead-9cec9742bc12
-  creationTimestamp: '2023-05-23T08:42:16Z'
+  creationTimestamp: "2023-05-23T08:42:16Z"
   generation: 2
   managedFields:
     - manager: openshift-controller-manager
       operation: Update
       apiVersion: apps.openshift.io/v1
-      time: '2023-05-23T08:42:16Z'
+      time: "2023-05-23T08:42:16Z"
       fieldsType: FieldsV1
       fieldsV1:
-        'f:metadata':
-          'f:annotations':
+        "f:metadata":
+          "f:annotations":
             .: {}
-            'f:template.alpha.openshift.io/wait-for-ready': {}
-          'f:labels':
+            "f:template.alpha.openshift.io/wait-for-ready": {}
+          "f:labels":
             .: {}
-            'f:template': {}
-            'f:template.openshift.io/template-instance-owner': {}
-        'f:spec':
-          'f:replicas': {}
-          'f:selector':
+            "f:template": {}
+            "f:template.openshift.io/template-instance-owner": {}
+        "f:spec":
+          "f:replicas": {}
+          "f:selector":
             .: {}
-            'f:name': {}
-          'f:strategy':
-            'f:activeDeadlineSeconds': {}
-            'f:recreateParams':
+            "f:name": {}
+          "f:strategy":
+            "f:activeDeadlineSeconds": {}
+            "f:recreateParams":
               .: {}
-              'f:timeoutSeconds': {}
-            'f:type': {}
-          'f:template':
+              "f:timeoutSeconds": {}
+            "f:type": {}
+          "f:template":
             .: {}
-            'f:metadata':
+            "f:metadata":
               .: {}
-              'f:creationTimestamp': {}
-              'f:labels':
+              "f:creationTimestamp": {}
+              "f:labels":
                 .: {}
-                'f:name': {}
-            'f:spec':
+                "f:name": {}
+            "f:spec":
               .: {}
-              'f:containers':
+              "f:containers":
                 .: {}
                 'k:{"name":"postgresql"}':
-                  'f:image': {}
-                  'f:volumeMounts':
+                  "f:image": {}
+                  "f:volumeMounts":
                     .: {}
                     'k:{"mountPath":"/var/lib/pgsql/data"}':
                       .: {}
-                      'f:mountPath': {}
-                      'f:name': {}
-                  'f:terminationMessagePolicy': {}
+                      "f:mountPath": {}
+                      "f:name": {}
+                  "f:terminationMessagePolicy": {}
                   .: {}
-                  'f:resources':
+                  "f:resources":
                     .: {}
-                    'f:limits':
+                    "f:limits":
                       .: {}
-                      'f:memory': {}
-                  'f:livenessProbe':
+                      "f:memory": {}
+                  "f:livenessProbe":
                     .: {}
-                    'f:exec':
+                    "f:exec":
                       .: {}
-                      'f:command': {}
-                    'f:failureThreshold': {}
-                    'f:initialDelaySeconds': {}
-                    'f:periodSeconds': {}
-                    'f:successThreshold': {}
-                    'f:timeoutSeconds': {}
-                  'f:env':
+                      "f:command": {}
+                    "f:failureThreshold": {}
+                    "f:initialDelaySeconds": {}
+                    "f:periodSeconds": {}
+                    "f:successThreshold": {}
+                    "f:timeoutSeconds": {}
+                  "f:env":
                     .: {}
                     'k:{"name":"POSTGRESQL_DATABASE"}':
                       .: {}
-                      'f:name': {}
-                      'f:valueFrom':
+                      "f:name": {}
+                      "f:valueFrom":
                         .: {}
-                        'f:secretKeyRef': {}
+                        "f:secretKeyRef": {}
                     'k:{"name":"POSTGRESQL_PASSWORD"}':
                       .: {}
-                      'f:name': {}
-                      'f:valueFrom':
+                      "f:name": {}
+                      "f:valueFrom":
                         .: {}
-                        'f:secretKeyRef': {}
+                        "f:secretKeyRef": {}
                     'k:{"name":"POSTGRESQL_USER"}':
                       .: {}
-                      'f:name': {}
-                      'f:valueFrom':
+                      "f:name": {}
+                      "f:valueFrom":
                         .: {}
-                        'f:secretKeyRef': {}
-                  'f:readinessProbe':
+                        "f:secretKeyRef": {}
+                  "f:readinessProbe":
                     .: {}
-                    'f:exec':
+                    "f:exec":
                       .: {}
-                      'f:command': {}
-                    'f:failureThreshold': {}
-                    'f:initialDelaySeconds': {}
-                    'f:periodSeconds': {}
-                    'f:successThreshold': {}
-                    'f:timeoutSeconds': {}
-                  'f:securityContext':
+                      "f:command": {}
+                    "f:failureThreshold": {}
+                    "f:initialDelaySeconds": {}
+                    "f:periodSeconds": {}
+                    "f:successThreshold": {}
+                    "f:timeoutSeconds": {}
+                  "f:securityContext":
                     .: {}
-                    'f:capabilities': {}
-                    'f:privileged': {}
-                  'f:terminationMessagePath': {}
-                  'f:imagePullPolicy': {}
-                  'f:ports':
+                    "f:capabilities": {}
+                    "f:privileged": {}
+                  "f:terminationMessagePath": {}
+                  "f:imagePullPolicy": {}
+                  "f:ports":
                     .: {}
                     'k:{"containerPort":5432,"protocol":"TCP"}':
                       .: {}
-                      'f:containerPort': {}
-                      'f:protocol': {}
-                  'f:name': {}
-              'f:dnsPolicy': {}
-              'f:restartPolicy': {}
-              'f:schedulerName': {}
-              'f:securityContext': {}
-              'f:terminationGracePeriodSeconds': {}
-              'f:volumes':
+                      "f:containerPort": {}
+                      "f:protocol": {}
+                  "f:name": {}
+              "f:dnsPolicy": {}
+              "f:restartPolicy": {}
+              "f:schedulerName": {}
+              "f:securityContext": {}
+              "f:terminationGracePeriodSeconds": {}
+              "f:volumes":
                 .: {}
                 'k:{"name":"postgresql-data"}':
                   .: {}
-                  'f:name': {}
-                  'f:persistentVolumeClaim':
+                  "f:name": {}
+                  "f:persistentVolumeClaim":
                     .: {}
-                    'f:claimName': {}
-          'f:triggers': {}
+                    "f:claimName": {}
+          "f:triggers": {}
     - manager: openshift-controller-manager
       operation: Update
       apiVersion: apps.openshift.io/v1
-      time: '2023-05-23T08:42:37Z'
+      time: "2023-05-23T08:42:37Z"
       fieldsType: FieldsV1
       fieldsV1:
-        'f:status':
-          'f:updatedReplicas': {}
-          'f:readyReplicas': {}
-          'f:conditions':
+        "f:status":
+          "f:updatedReplicas": {}
+          "f:readyReplicas": {}
+          "f:conditions":
             .: {}
             'k:{"type":"Available"}':
               .: {}
-              'f:lastTransitionTime': {}
-              'f:lastUpdateTime': {}
-              'f:message': {}
-              'f:status': {}
-              'f:type': {}
+              "f:lastTransitionTime": {}
+              "f:lastUpdateTime": {}
+              "f:message": {}
+              "f:status": {}
+              "f:type": {}
             'k:{"type":"Progressing"}':
               .: {}
-              'f:lastTransitionTime': {}
-              'f:lastUpdateTime': {}
-              'f:message': {}
-              'f:reason': {}
-              'f:status': {}
-              'f:type': {}
-          'f:details':
+              "f:lastTransitionTime": {}
+              "f:lastUpdateTime": {}
+              "f:message": {}
+              "f:reason": {}
+              "f:status": {}
+              "f:type": {}
+          "f:details":
             .: {}
-            'f:causes': {}
-            'f:message': {}
-          'f:replicas': {}
-          'f:availableReplicas': {}
-          'f:observedGeneration': {}
-          'f:unavailableReplicas': {}
-          'f:latestVersion': {}
+            "f:causes": {}
+            "f:message": {}
+          "f:replicas": {}
+          "f:availableReplicas": {}
+          "f:observedGeneration": {}
+          "f:unavailableReplicas": {}
+          "f:latestVersion": {}
       subresource: status
   namespace: yannvd-dev
   labels:
@@ -184,7 +184,7 @@ spec:
         from:
           kind: ImageStreamTag
           namespace: openshift
-          name: 'postgresql:10-el8'
+          name: "postgresql:10-el8"
         lastTriggeredImage: >-
           image-registry.openshift-image-registry.svc:5000/openshift/postgresql@sha256:f98ee90210167538a919250e6cee6fc2105744b9adfd986034cd0a3056d1b209
     - type: ConfigChange
@@ -222,14 +222,13 @@ spec:
             exec:
               command:
                 - /usr/libexec/check-container
-                - '--live'
+                - "--live"
             initialDelaySeconds: 120
             timeoutSeconds: 10
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 3
           env:
-            env:
             - name: POSTGRESQL_USER
               value: postgres
             - name: POSTGRESQL_PASSWORD
@@ -269,14 +268,14 @@ status:
   updatedReplicas: 1
   conditions:
     - type: Available
-      status: 'True'
-      lastUpdateTime: '2023-05-23T08:42:34Z'
-      lastTransitionTime: '2023-05-23T08:42:34Z'
+      status: "True"
+      lastUpdateTime: "2023-05-23T08:42:34Z"
+      lastTransitionTime: "2023-05-23T08:42:34Z"
       message: Deployment config has minimum availability.
     - type: Progressing
-      status: 'True'
-      lastUpdateTime: '2023-05-23T08:42:37Z'
-      lastTransitionTime: '2023-05-23T08:42:17Z'
+      status: "True"
+      lastUpdateTime: "2023-05-23T08:42:37Z"
+      lastTransitionTime: "2023-05-23T08:42:17Z"
       reason: NewReplicationControllerAvailable
       message: replication controller "postgresql-1" successfully rolled out
   replicas: 1
@@ -300,17 +299,17 @@ spec:
         app: redis
     spec:
       containers:
-      - image: redis:alpine
-        name: redis
-        ports:
-        - containerPort: 6379
+        - image: redis:alpine
           name: redis
-        volumeMounts:
-        - mountPath: /data
-          name: redis-data
+          ports:
+            - containerPort: 6379
+              name: redis
+          volumeMounts:
+            - mountPath: /data
+              name: redis-data
       volumes:
-      - name: redis-data
-        emptyDir: {}
+        - name: redis-data
+          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
@@ -321,9 +320,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: "redis-service"
-    port: 6379
-    targetPort: 6379
+    - name: "redis-service"
+      port: 6379
+      targetPort: 6379
   selector:
     app: redis
 ---
@@ -344,8 +343,8 @@ spec:
         app: worker
     spec:
       containers:
-      - image: spywash/devops:worker
-        name: worker
+        - image: spywash/devops:worker
+          name: worker
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -364,11 +363,11 @@ spec:
         app: vote
     spec:
       containers:
-      - image: spywash/devops:vote
-        name: vote
-        ports:
-        - containerPort: 80
+        - image: spywash/devops:vote
           name: vote
+          ports:
+            - containerPort: 80
+              name: vote
 ---
 apiVersion: v1
 kind: Service
@@ -379,10 +378,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "vote-service"
-    port: 5000
-    targetPort: 80
-    nodePort: 32000
+    - name: "vote-service"
+      port: 5000
+      targetPort: 80
+      nodePort: 32000
   selector:
     app: vote
 ---
@@ -403,11 +402,11 @@ spec:
         app: result
     spec:
       containers:
-      - image: spywash/devops:result
-        name: result
-        ports:
-        - containerPort: 80
+        - image: spywash/devops:result
           name: result
+          ports:
+            - containerPort: 80
+              name: result
 ---
 apiVersion: v1
 kind: Service
@@ -418,9 +417,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "result-service"
-    port: 5001
-    targetPort: 80
-    nodePort: 32001
+    - name: "result-service"
+      port: 5001
+      targetPort: 80
+      nodePort: 32001
   selector:
     app: result
