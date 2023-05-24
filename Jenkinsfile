@@ -22,6 +22,7 @@ pipeline {
         sh 'trivy image docker.io/tanguyn/ity:vote > vote-security.log'
         sh 'trivy image docker.io/tanguyn/ity:result > result-security.log'
         sh 'trivy image docker.io/tanguyn/ity:worker > worker-security.log' 
+
       }
     }
     stage('Push result image') {
@@ -53,3 +54,4 @@ pipeline {
         }
     }
 }
+
