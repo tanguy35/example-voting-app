@@ -1,65 +1,55 @@
 pipeline {
   agent any
   stages {
-    if (env.BRANCH_NAME == 'develop'){
-      stage('Build result') {
-      steps {
-        sh 'docker build -t spywash/devops:result ./result'
-      }
-    } 
-    stage('Build vote') {
-      steps {
-        sh 'docker build -t spywash/devops:vote ./vote'
-      }
-    }
-    stage('Build worker') {
-      steps {
-        sh 'docker build -t spywash/devops:worker ./worker'
-      }
-    }
-
-    } else {
-
-    
-
     stage('Build result') {
       steps {
-        sh 'docker build -t spywash/devops:result ./result'
+        sh 'docker build -t tanguyn/ity:result ./result'
       }
     } 
     stage('Build vote') {
       steps {
-        sh 'docker build -t spywash/devops:vote ./vote'
+        sh 'docker build -t tanguyn/ity:vote ./vote'
       }
     }
     stage('Build worker') {
       steps {
-        sh 'docker build -t spywash/devops:worker ./worker'
+        sh 'docker build -t tanguyn/ity:worker ./worker'
+      }
+    }
+    stage('Security scan') {
+      steps {
+        sh 'trivy fs . > git-security.log'
+        sh 'trivy image docker.io/tanguyn/ity:vote > vote-security.log'
+        sh 'trivy image docker.io/tanguyn/ity:result > result-security.log'
+        sh 'trivy image docker.io/tanguyn/ity:worker > worker-security.log' 
       }
     }
     stage('Push result image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:result'
+          sh 'docker push tanguyn/ity:result'
         }
       }
     }
     stage('Push vote image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:vote'
+          sh 'docker push tanguyn/ity:vote'
         }
       }
     }
     stage('Push worker image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:worker'
+          sh 'docker push tanguyn/ity:worker'
         }
       }
     }
-
-    }
-
+   
   }
+  post {
+        always {
+            archiveArtifacts artifacts: 'git-security.log, vote-security.log, result-security.log, worker-security.log', onlyIfSuccessful: false
+        }
+    }
 }
